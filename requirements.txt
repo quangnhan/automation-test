@@ -1,3 +1,4 @@
 django
 selenium
 django-crispy-forms
+rpaframework
