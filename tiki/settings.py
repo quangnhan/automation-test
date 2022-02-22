@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'human',
+    'products',
+    'apartment',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,11 @@ EMAIL_HOST_USER = 'quangnhan145@gmail.com'
 EMAIL_HOST_PASSWORD = 'yhsafziemqtjjmim'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = BASE_DIR / 'static'
+
+LOGIN_REDIRECT_URL = 'product_list'
+LOGOUT_REDIRECT_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
