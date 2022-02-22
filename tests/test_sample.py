@@ -148,7 +148,7 @@ def query_items_and_send_report():
 
 
 def minimal_task():
-    sel.open_chrome_browser(URL, headless=True)
+    sel.open_available_browser(URL, headless=True)
     login_the_app_and_choose_add_new_item()
     item_list = read_data_to_table(data_file, 'Sheet1')
     for item in item_list:
