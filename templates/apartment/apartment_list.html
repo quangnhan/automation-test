@@ -1,0 +1,58 @@
+
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-10 row">
+        <div class="col-4">
+            <input class="form-control" id='input_search' placeholder="Số hợp đồng (12345)" value="{{request.GET.so_hop_dong}}">
+        </div>
+        <div class="col-2">
+            <a id='btn_search' href="{% url 'apartment_list' %}" class="btn btn-primary ">Search</a>
+        </div>
+    </div>
+    <div class="col-2 float-left">
+        <a href="{% url 'apartment_create' %}" class="btn btn-success float-right">Create apartment</a>
+    </div>
+</div>
+
+<table class="mt-2 table">
+    <tr>
+        <th>Ngày kí hợp đồng</th>
+        <th>Số hợp đồng</th>
+        <th>Tên khách hàng</th>
+        <th>Email khách hàng</th>
+        <th>Ngày hiệu lực</th>
+        <th>Ngày hết hạn</th>
+        <th>Thời hạn</th>
+        <th>Giá thuê</th>
+        <th>Tiền cọc</th>
+    </tr>
+    {% for apartment in list_all_apartment %}
+        <tr>
+            <td>{{apartment.ngay_ky|date:"d/m/Y"}}</td>
+            <td>{{apartment.so_hop_dong}}</td>
+            <td>{{apartment.ten_khach_hang}}</td>
+            <td>{{apartment.email}}</td>
+            <td>{{apartment.ngay_hieu_luc|date:"d/m/Y"}}</td>
+            <td>{{apartment.ngay_ngay_het_han|date:"d/m/Y"}}</td>
+            <td>{{apartment.thoi_han}}</td>
+            <td>{{apartment.gia_thue}}</td>
+            <td>{{apartment.tien_coc}}</td>
+            <td>
+              <a href="{% url 'apartment_detail' apartment.id%}" class="btn btn-primary">Detail</a>
+              <a href="{% url 'apartment_update' apartment.id%}" class="btn btn-warning">Update</a>
+              <a href="{% url 'apartment_delete' apartment.id%}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script>
+    $('#input_search').change(function(){
+        var q = $('#input_search').val()
+        $('#btn_search').attr('href', "{% url 'apartment_list' %}" + "?so_hop_dong=" + q)
+        }
+    )
+</script>
+{% endblock content %}
+

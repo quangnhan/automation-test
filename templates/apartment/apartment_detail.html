@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-2">Ngày kí</div>
+    <div class="col-2">{{apartment.ngay_ky}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Số hợp đồng</div>
+    <div class="col-2">{{apartment.so_hop_dong}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Tên khách hàng</div>
+    <div class="col-2">{{apartment.ten_khach_hang}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Email</div>
+    <div class="col-2">{{apartment.email}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Ngày hiệu lực</div>
+    <div class="col-2">{{apartment.ngay_ngay_het_han}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Ngày hết hạn</div>
+    <div class="col-2">{{apartment.ngay_ngay_het_han}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Thời hạn</div>
+    <div class="col-2">{{apartment.thoi_han}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Giá thuê</div>
+    <div class="col-2">{{apartment.gia_thue}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Tiền cọc</div>
+    <div class="col-2">{{apartment.tien_coc}}</div>
+</div>
+{% endblock content %}

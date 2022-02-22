@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-2">CMND</div>
+    <div class="col-2">{{human.CMND}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Tên</div>
+    <div class="col-2">{{human.ten}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Ngày sinh</div>
+    <div class="col-2">{{human.ngay_sinh}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Bệnh nền</div>
+    <div class="col-2">{{human.benh_nen}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Tiền sử bênh</div>
+    <div class="col-2">{{human.tien_su_benh}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Dị ứng</div>
+    <div class="col-2">{{human.di_ung}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Loại vắc xin</div>
+    <div class="col-2">{{human.loai_vac_xin}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Ngày tiêm</div>
+    <div class="col-2">{{human.ngay_tiem}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Số lần tiêm</div>
+    <div class="col-2">{{human.so_lan_tiem}}</div>
+</div>
+{% endblock content %}

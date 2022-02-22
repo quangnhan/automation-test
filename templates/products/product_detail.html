@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-2">Product Code</div>
+    <div class="col-2">{{product.code}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Product Name</div>
+    <div class="col-2">{{product.name}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Quantity</div>
+    <div class="col-2">{{product.quantity}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Unit</div>
+    <div class="col-2">{{product.unit}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Unit Price</div>
+    <div class="col-2">{{product.unit_price}}</div>
+</div>
+<div class="row">
+    <div class="col-2">Total Amount</div>
+    <div class="col-2">{{product.total_amount}}</div>
+</div>
+{% endblock content %}

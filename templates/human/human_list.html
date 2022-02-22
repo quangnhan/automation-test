@@ -1,0 +1,59 @@
+
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-10 row">
+        <div class="col-4">
+            <input class="form-control" id='input_search' placeholder="CMND (12345)" value="{{request.GET.cmnd}}">
+        </div>
+        <div class="col-2">
+            <a id='btn_search' href="{% url 'human_list' %}" class="btn btn-primary ">Search</a>
+        </div>
+    </div>
+    <div class="col-2 float-left">
+        <a href="{% url 'human_create' %}" class="btn btn-success float-right">Create human</a>
+    </div>
+</div>
+
+<table class="mt-2 table">
+    <tr>
+        <th>CMND</th>
+        <th>Tên</th>
+        <th>Ngày sinh</th>
+        <th>Bệnh nền</th>
+        <th>Tiền sử bệnh</th>
+        <th>Dị ứng</th>
+        <th>Loại vắc xin</th>
+        <th>Ngày tiêm</th>
+        <th>Số lần tiêm</th>
+        <th>Action</th>
+    </tr>
+    {% for human in list_all_human %}
+        <tr>
+            <td>{{human.CMND}}</td>
+            <td>{{human.ten}}</td>
+            <td>{{human.ngay_sinh}}</td>
+            <td>{{human.benh_nen}}</td>
+            <td>{{human.tien_su_benh}}</td>
+            <td>{{human.di_ung}}</td>
+            <td>{{human.loai_vac_xin}}</td>
+            <td>{{human.ngay_tiem}}</td>
+            <td>{{human.so_lan_tiem}}</td>
+            <td>
+              <a href="{% url 'human_detail' human.id%}" class="btn btn-primary">Detail</a>
+              <a href="{% url 'human_update' human.id%}" class="btn btn-warning">Update</a>
+              <a href="{% url 'human_delete' human.id%}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script>
+    $('#input_search').change(function(){
+        var q = $('#input_search').val()
+        $('#btn_search').attr('href', "{% url 'human_list' %}" + "?cmnd=" + q)
+        }
+    )
+</script>
+{% endblock content %}
+
